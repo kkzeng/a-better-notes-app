@@ -27,9 +27,7 @@ class NoteViewModel @Inject constructor(
             noteRepository.getAllNotes()
                 .distinctUntilChanged()
                 .collect { listOfNotes ->
-                    if (listOfNotes.isNotEmpty()) {
-                        _noteList.value = listOfNotes
-                    }
+                    _noteList.value = listOfNotes
                 }
         }
     }
